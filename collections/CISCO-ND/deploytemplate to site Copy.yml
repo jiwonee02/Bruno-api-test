@@ -1,0 +1,78 @@
+info:
+  name: deploytemplate to site Copy
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: https://10.100.199.211/api/v1/schemas/:schema-id
+  headers:
+    - name: cookie
+      value: AuthCookie={{auth-cookie}}
+  params:
+    - name: schema-id
+      value: 6821b68a20000068020910ce
+      type: path
+  body:
+    type: json
+    data: "/*\r
+
+      {\r
+
+      \    \"op\": \"add\",\r
+
+      \    \"path\": \"/sites/-\",\r
+
+      \    \"value\": {\r
+
+      \        \"siteId\": siteId,\r
+
+      \        \"templateName\": templateName\r
+
+      \    }\r
+
+      }\r
+
+      */"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: "const options = {\r
+
+        \    url: \"https://10.100.199.211/login\",\r
+
+        \    method: 'POST',\r
+
+        \    headers: { 'content-type': 'application/json' },\r
+
+        \    data: JSON.stringify({ \"userName\": \"admin\", \"userPasswd\": \"!@34Qwer\", \"domain\": \"local\"})\r
+
+        };\r
+
+        \r
+
+        await bru.sendRequest(options, async function(err, res) {\r
+
+        \    var jsonData = res.data;\r
+
+        \    if (err) {\r
+
+        \        console.log(err);\r
+
+        \    }\r
+
+        \    else {\r
+
+        \        bru.setEnvVar(\"auth-cookie\", jsonData.jwttoken);\r
+
+        \    }\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

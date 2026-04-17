@@ -1,0 +1,34 @@
+info:
+  name: list policy delta
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: https://{{server-address}}/mso/api/v2/schemas/:schema-id/policy-delta?objectType=epg&ref=schemas/686cb7c91f0000491c8bb157/templates/Test_Ocean_TMP/anps/AP_Ocean/epgs/EPG_Ocean&siteId=686c83ed680003760832b8ba
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: objectType
+      value: epg
+      type: query
+    - name: ref
+      value: schemas/686cb7c91f0000491c8bb157/templates/Test_Ocean_TMP/anps/AP_Ocean/epgs/EPG_Ocean
+      type: query
+    - name: siteId
+      value: 686c83ed680003760832b8ba
+      type: query
+    - name: schema-id
+      value: 686cb7c91f0000491c8bb157
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,31 @@
+info:
+  name: template status
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: https://{{server-address}}/mso/api/v1/status/schema/:schema-id/template/:template-name
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: schema-id
+      value: 68d155a8443d1e6f3ffab327
+      type: path
+    - name: template-name
+      value: Template_soyeon1
+      type: path
+      description: |-
+        TP_NH_FEX
+        Template-1
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

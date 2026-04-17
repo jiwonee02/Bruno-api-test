@@ -1,0 +1,34 @@
+info:
+  name: List Interface Policy details
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: https://{{server-address}}/appcenter/cisco/ndfc/api/v1/lan-fabric/rest/interface
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: serialNumber
+      value: 9Q9H9C9G1O5
+      type: query
+      disabled: true
+    - name: ifName
+      value: Ethernet1/29
+      type: query
+      disabled: true
+    - name: templateName
+      value: int_trunk_host
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: // /api/v1/schemas/{id}/templates/{templateName}/anps/{anpName}/epgs/{epgName}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

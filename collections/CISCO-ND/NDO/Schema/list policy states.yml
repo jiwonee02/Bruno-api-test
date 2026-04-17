@@ -1,0 +1,25 @@
+info:
+  name: list policy states
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: https://{{server-address}}/api/v1/schemas/:schema-id/policy-states
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: schema-id
+      value: 686cb7c91f0000491c8bb157
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

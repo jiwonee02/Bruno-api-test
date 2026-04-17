@@ -1,0 +1,25 @@
+info:
+  name: get Schema
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: https://{{server-address}}/api/v1/schemas/:schema-id
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: schema-id
+      value: 68d4959f925970dae889ecb5
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

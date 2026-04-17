@@ -1,0 +1,21 @@
+info:
+  name: list Sites v2 Copy
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: https://{{server-address}}/mso/api/v2/sites
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

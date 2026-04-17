@@ -1,0 +1,30 @@
+info:
+  name: Get Top 10 Optics Stats by type
+  type: http
+  seq: 32
+
+http:
+  method: GET
+  url: https://{{server-address}}/appcenter/cisco/ndfc/api/v1/pm/stat/getTopOpticsByType
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: navId
+      value: "-1"
+      type: query
+      disabled: true
+    - name: type
+      value: "1"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: // /api/v1/schemas/{id}/templates/{templateName}/anps/{anpName}/epgs/{epgName}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

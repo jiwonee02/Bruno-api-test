@@ -1,0 +1,519 @@
+info:
+  name: update Schema
+  type: http
+  seq: 15
+
+http:
+  method: PUT
+  url: https://10.100.199.211/api/v1/schemas/6618b5b11f0000cbc6121c2c
+  headers:
+    - name: cookie
+      value: AuthCookie="eyJhbGciOiJSUzI1NiIsImtpZCI6InRhc3ZkOW4wd3AyaXBrNHZ0czQycWtrejU2Y3A2YTlxIiwidHlwIjoiSldUIn0.eyJhdnBhaXIiOiJzaGVsbDpkb21haW5zPWFsbC9hZG1pbi8iLCJjbHVzdGVyIjoiNDM0YzJkNGUtNDQwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwIiwiZXhwIjoxNzE0MTE4NjkzLCJpYXQiOjE3MTQxMTc0OTMsImlkIjoiNDhkMTA1YmRmYmM0OWE1ZmNmMzlhMTBiOTYxMzg2ZTYxZGZlNDAwODVjYjAzMTVkODE4Yjc2MWM1NzM1ZGFmYSIsImlzcyI6Im5kIiwiaXNzLWhvc3QiOiIxMC4xMDAuMTk5LjIxMSIsInJiYWMiOlt7ImRvbWFpbiI6ImFsbCIsInJvbGVzUiI6MTY3NzcyMTYsInJvbGVzVyI6MSwicm9sZXMiOltbImFkbWluIiwiV3JpdGVQcml2Il0sWyJhcHAtdXNlciIsIlJlYWRQcml2Il1dfV0sInNlc3Npb25pZCI6InVpYzQ3UUN1cGxSQzNrbkxEUnVROUxRayIsInVzZXJmbGFncyI6MCwidXNlcmlkIjoyNTAwMiwidXNlcm5hbWUiOiJhZG1pbiIsInVzZXJ0eXBlIjoibG9jYWwifQ.tB0pR7OF0PERNts35r51eXrjNk3cG4eoWDQtsdnoIQ__KhTJKhui5mFzod8d_jFZAYXjTK8seGwAHczRxaYir1DOaf8cWWH5ypCWCFAjeV7daRkTs2Oa4_ynHJpXR_N_8qCtbuA0_W7iJlTUcH8_4LYnfnoFuJDORElfKxNYlQGxr36geJGzzZZwbVgmaQ0dfTckf3mRf5OZGrgEoxCvVDRlU1AqMKT6adyRTxer4gWVkUPHYgXfRyCLEbFN8RgGp5PxsSzKBIrP2XMK1uTJgx0zLqIFh_A3DH7H5hTEO_-7POS6e6W9XE8DHT9ZCJZXWk7nuHwH2V5FYLjl_Aj0KA
+  body:
+    type: json
+    data: |-
+      {
+          "id": "6618b5b11f0000cbc6121c2c",
+          "displayName": "Site-B-DB",
+          "description": "",
+          "templates": [
+              {
+                  "name": "Site-B-Temp",
+                  "displayName": "Site-B-Temp",
+                  "tenantId": "66187f781f0000b7bf121c24",
+                  "anps": [
+                      {
+                          "name": "AP_DB",
+                          "displayName": "AP_NEW",
+                          "anpRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/AP_DB",
+                          "epgs": [
+                              {
+                                  "name": "EPG-DB",
+                                  "displayName": "EPG-DB",
+                                  "epgRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/AP_DB/epgs/EPG-DB",
+                                  "contractRelationships": [
+                                      {
+                                          "relationshipType": "consumer",
+                                          "contractRef": "/schemas/662070531f0000bec4a723eb/templates/TMP_1/contracts/Con1_j"
+                                      },
+                                      {
+                                          "relationshipType": "provider",
+                                          "contractRef": "/schemas/662070531f0000bec4a723eb/templates/TMP_1/contracts/Con1_j"
+                                      }
+                                  ],
+                                  "subnets": [],
+                                  "uSegEpg": false,
+                                  "uSegAttrs": [],
+                                  "intraEpg": "unenforced",
+                                  "prio": "unspecified",
+                                  "proxyArp": false,
+                                  "mCastSource": false,
+                                  "preferredGroup": false,
+                                  "bdRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/bds/BD-DB",
+                                  "vrfRef": "",
+                                  "selectors": [],
+                                  "epgType": "application",
+                                  "description": "dddddddddd"
+                              },
+                              {
+                                  "name": "EPG-TEST",
+                                  "displayName": "EPG-TEST",
+                                  "epgRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/AP_DB/epgs/EPG-TEST",
+                                  "contractRelationships": [],
+                                  "subnets": [],
+                                  "uSegEpg": false,
+                                  "uSegAttrs": [],
+                                  "intraEpg": "unenforced",
+                                  "prio": "unspecified",
+                                  "proxyArp": false,
+                                  "mCastSource": false,
+                                  "preferredGroup": false,
+                                  "bdRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/bds/BD-DB",
+                                  "vrfRef": "",
+                                  "selectors": [],
+                                  "epgType": "application",
+                                  "description": "dddd"
+                              },
+                              {
+                                  "name": "EPG-TEST2",
+                                  "displayName": "EPG-TEST2",
+                                  "epgRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/AP_DB/epgs/EPG-TEST2",
+                                  "contractRelationships": [],
+                                  "subnets": [],
+                                  "uSegEpg": false,
+                                  "uSegAttrs": [],
+                                  "intraEpg": "unenforced",
+                                  "prio": "unspecified",
+                                  "proxyArp": false,
+                                  "mCastSource": false,
+                                  "preferredGroup": false,
+                                  "bdRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/bds/BD-DB",
+                                  "vrfRef": "",
+                                  "selectors": [],
+                                  "epgType": "application",
+                                  "description": "!@#$%^"
+                              }
+                          ],
+                          "description": "AP_NEWAP_NEWAP_NEWAP_NEW"
+                      },
+                      {
+                          "name": "ASTEST",
+                          "displayName": "ASTEST2",
+                          "anpRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/ASTEST",
+                          "epgs": [],
+                          "description": "!@##$%^"
+                      },
+                      {
+                          "name": "TestONNDO",
+                          "displayName": "Test ON NDO   ",
+                          "anpRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/TestONNDO",
+                          "epgs": [],
+                          "description": "Test ON NDO"
+                      },
+                      {
+                          "name": "Test2",
+                          "displayName": "Test2",
+                          "anpRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/Test2",
+                          "epgs": [],
+                          "description": "Test3333"
+                      }
+                  ],
+                  "vrfs": [
+                      {
+                          "name": "VRF-DB",
+                          "displayName": "VRF-DB",
+                          "vrfRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/vrfs/VRF-DB",
+                          "l3MCast": false,
+                          "preferredGroup": false,
+                          "vzAnyEnabled": false,
+                          "vzAnyProviderContracts": [],
+                          "vzAnyConsumerContracts": [],
+                          "rpConfigs": [],
+                          "pcEnfPref": "enforced",
+                          "ipDataPlaneLearning": "enabled",
+                          "description": "",
+                          "rtAutoDisabled": false
+                      },
+                      {
+                          "name": "VRF-TEST",
+                          "displayName": "VRF-TEST",
+                          "vrfRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/vrfs/VRF-TEST",
+                          "l3MCast": false,
+                          "preferredGroup": false,
+                          "vzAnyEnabled": false,
+                          "vzAnyProviderContracts": [],
+                          "vzAnyConsumerContracts": [],
+                          "rpConfigs": [],
+                          "pcEnfPref": "enforced",
+                          "ipDataPlaneLearning": "enabled",
+                          "description": "!@#$%^",
+                          "rtAutoDisabled": false
+                      }
+                  ],
+                  "bds": [
+                      {
+                          "name": "BD-DB",
+                          "displayName": "BD-DB",
+                          "bdRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/bds/BD-DB",
+                          "l2UnknownUnicast": "proxy",
+                          "intersiteBumTrafficAllow": true,
+                          "optimizeWanBandwidth": true,
+                          "l2Stretch": true,
+                          "l3MCast": false,
+                          "subnets": [
+                              {
+                                  "ip": "32.32.32.1/24",
+                                  "description": "!@#$%^",
+                                  "scope": "public",
+                                  "shared": false,
+                                  "querier": false,
+                                  "noDefaultGateway": false,
+                                  "virtual": false,
+                                  "primary": false
+                              }
+                          ],
+                          "vrfRef": "/schemas/662070531f0000bec4a723eb/templates/TMP_1/vrfs/VRF_1",
+                          "unkMcastAct": "flood",
+                          "v6unkMcastAct": "flood",
+                          "arpFlood": true,
+                          "multiDstPktAct": "bd-flood",
+                          "dhcpLabels": [],
+                          "unicastRouting": true,
+                          "description": ""
+                      }
+                  ],
+                  "contracts": [
+                      {
+                          "name": "TESTDN",
+                          "displayName": "TESTDN",
+                          "contractRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/contracts/TESTDN",
+                          "filterRelationships": [
+                              {
+                                  "filterRef": "/schemas/65d68e301f000094d88bfa68/templates/Common_LDH/filters/Ftr_LDH",
+                                  "directives": [
+                                      "none"
+                                  ],
+                                  "action": "permit",
+                                  "priorityOverride": "default"
+                              }
+                          ],
+                          "prio": "unspecified",
+                          "scope": "context",
+                          "subjectName": "msc-subject",
+                          "filterType": "bothWay",
+                          "filterRelationshipsProviderToConsumer": [],
+                          "filterRelationshipsConsumerToProvider": [],
+                          "description": "!@#$%$%^"
+                      }
+                  ],
+                  "filters": [
+                      {
+                          "name": "testFilter",
+                          "displayName": "testFilter",
+                          "description": "",
+                          "filterRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/filters/testFilter",
+                          "entries": [
+                              {
+                                  "name": "testEntry",
+                                  "displayName": "testDisplay",
+                                  "description": "",
+                                  "etherType": "unspecified",
+                                  "arpFlag": "unspecified",
+                                  "ipProtocol": "unspecified",
+                                  "matchOnlyFragments": false,
+                                  "stateful": false,
+                                  "sourceFrom": "unspecified",
+                                  "sourceTo": "unspecified",
+                                  "destinationFrom": "unspecified",
+                                  "destinationTo": "unspecified",
+                                  "tcpSessionRules": [
+                                      "unspecified"
+                                  ]
+                              }
+                          ]
+                      },
+                      {
+                          "name": "testFilter2",
+                          "displayName": "testFilter2",
+                          "description": "!@#$",
+                          "filterRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/filters/testFilter2",
+                          "entries": [
+                              {
+                                  "name": "testEntry1",
+                                  "displayName": "testDIplay1",
+                                  "description": "",
+                                  "etherType": "unspecified",
+                                  "arpFlag": "unspecified",
+                                  "ipProtocol": "unspecified",
+                                  "matchOnlyFragments": false,
+                                  "stateful": false,
+                                  "sourceFrom": "unspecified",
+                                  "sourceTo": "unspecified",
+                                  "destinationFrom": "unspecified",
+                                  "destinationTo": "unspecified",
+                                  "tcpSessionRules": [
+                                      "unspecified"
+                                  ]
+                              }
+                          ]
+                      },
+                      {
+                          "name": "testFilter3",
+                          "displayName": "testFilter3",
+                          "description": "",
+                          "filterRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/filters/testFilter3",
+                          "entries": [
+                              {
+                                  "name": "!@##$%",
+                                  "displayName": "testDisplay2",
+                                  "description": "",
+                                  "etherType": "unspecified",
+                                  "arpFlag": "unspecified",
+                                  "ipProtocol": "unspecified",
+                                  "matchOnlyFragments": false,
+                                  "stateful": false,
+                                  "sourceFrom": "unspecified",
+                                  "sourceTo": "unspecified",
+                                  "destinationFrom": "unspecified",
+                                  "destinationTo": "unspecified",
+                                  "tcpSessionRules": [
+                                      "unspecified"
+                                  ]
+                              }
+                          ]
+                      },
+                      {
+                          "name": "testFilter4",
+                          "displayName": "testFilter4",
+                          "description": "",
+                          "filterRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/filters/testFilter4",
+                          "entries": [
+                              {
+                                  "name": "testEntry4",
+                                  "displayName": "!@#$^",
+                                  "description": "",
+                                  "etherType": "unspecified",
+                                  "arpFlag": "unspecified",
+                                  "ipProtocol": "unspecified",
+                                  "matchOnlyFragments": false,
+                                  "stateful": false,
+                                  "sourceFrom": "unspecified",
+                                  "sourceTo": "unspecified",
+                                  "destinationFrom": "unspecified",
+                                  "destinationTo": "unspecified",
+                                  "tcpSessionRules": [
+                                      "unspecified"
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "externalEpgs": [
+                      {
+                          "name": "Ext-DB",
+                          "displayName": "Ext-DB",
+                          "extEpgType": "on-premise",
+                          "vrfRef": "/schemas/662070531f0000bec4a723eb/templates/TMP_1/vrfs/VRF_1",
+                          "subnets": [
+                              {
+                                  "ip": "0.0.0.0/0",
+                                  "scope": [
+                                      "import-security"
+                                  ],
+                                  "aggregate": []
+                              }
+                          ],
+                          "selectors": [],
+                          "contractRelationships": [],
+                          "preferredGroup": false,
+                          "externalEpgRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/externalEpgs/Ext-DB",
+                          "l3outRef": "",
+                          "anpRef": "",
+                          "description": ""
+                      }
+                  ],
+                  "serviceGraphs": [],
+                  "intersiteL3outs": [
+                      {
+                          "name": "L3out_DB",
+                          "displayName": "L3out_DB",
+                          "vrfRef": "/schemas/662070531f0000bec4a723eb/templates/TMP_1/vrfs/VRF_1",
+                          "l3outRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/l3outs/L3out_DB",
+                          "description": ""
+                      },
+                      {
+                          "name": "L3out_test",
+                          "displayName": "L3out_test",
+                          "vrfRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/vrfs/VRF-TEST",
+                          "l3outRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/l3outs/L3out_test",
+                          "description": "!@##$%%"
+                      }
+                  ],
+                  "templateType": "stretched-template",
+                  "templateSubType": [],
+                  "networks": [],
+                  "description": "",
+                  "version": 54
+              }
+          ],
+          "_updateVersion": 20,
+          "sites": [
+              {
+                  "siteId": "6528b1668c986771089ac72f",
+                  "templateName": "Site-B-Temp",
+                  "anps": [
+                      {
+                          "anpRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/AP_DB",
+                          "epgs": [
+                              {
+                                  "epgRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/AP_DB/epgs/EPG-DB",
+                                  "domainAssociations": [
+                                      {
+                                          "dn": "uni/phys-PD_ALL",
+                                          "domainType": "physicalDomain",
+                                          "deployImmediacy": "lazy",
+                                          "resolutionImmediacy": "immediate",
+                                          "allowMicroSegmentation": false
+                                      }
+                                  ],
+                                  "staticPorts": [
+                                      {
+                                          "type": "port",
+                                          "path": "topology/pod-1/paths-101/pathep-[eth1/3]",
+                                          "portEncapVlan": 98,
+                                          "deploymentImmediacy": "immediate",
+                                          "mode": "regular"
+                                      },
+                                      {
+                                          "type": "port",
+                                          "path": "topology/pod-1/paths-102/pathep-[eth1/2]",
+                                          "portEncapVlan": 99,
+                                          "deploymentImmediacy": "lazy",
+                                          "mode": "regular"
+                                      },
+                                      {
+                                          "type": "port",
+                                          "path": "topology/pod-1/paths-!@#$$/pathep-[eth1/4]",
+                                          "portEncapVlan": 100,
+                                          "deploymentImmediacy": "lazy",
+                                          "mode": "regular"
+                                      },
+                                      {
+                                          "type": "port",
+                                          "path": "topology/pod-!@#$$%/paths-103/pathep-[eth1/5]",
+                                          "portEncapVlan": 101,
+                                          "deploymentImmediacy": "lazy",
+                                          "mode": "regular"
+                                      },
+                                      {
+                                          "type": "port",
+                                          "path": "topology/pod-1/paths-104/pathep-[!@#%%^]",
+                                          "portEncapVlan": 102,
+                                          "deploymentImmediacy": "lazy",
+                                          "mode": "regular"
+                                      }
+                                  ],
+                                  "staticLeafs": [],
+                                  "uSegAttrs": [],
+                                  "subnets": [],
+                                  "selectors": []
+                              },
+                              {
+                                  "epgRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/AP_DB/epgs/EPG-TEST",
+                                  "domainAssociations": [],
+                                  "staticPorts": [],
+                                  "staticLeafs": [],
+                                  "uSegAttrs": [],
+                                  "subnets": [],
+                                  "selectors": []
+                              },
+                              {
+                                  "epgRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/AP_DB/epgs/EPG-TEST2",
+                                  "domainAssociations": [],
+                                  "staticPorts": [],
+                                  "staticLeafs": [],
+                                  "uSegAttrs": [],
+                                  "subnets": [],
+                                  "selectors": []
+                              }
+                          ]
+                      },
+                      {
+                          "anpRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/ASTEST",
+                          "epgs": []
+                      },
+                      {
+                          "anpRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/TestONNDO",
+                          "epgs": []
+                      },
+                      {
+                          "anpRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/Test2",
+                          "epgs": []
+                      }
+                  ],
+                  "vrfs": [
+                      {
+                          "vrfRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/vrfs/VRF-DB",
+                          "regions": [],
+                          "trmEnabled": false,
+                          "isRPExternal": false,
+                          "dcnmStaticLeafs": [],
+                          "routeLeak": []
+                      },
+                      {
+                          "vrfRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/vrfs/VRF-TEST",
+                          "regions": [],
+                          "trmEnabled": false,
+                          "isRPExternal": false,
+                          "dcnmStaticLeafs": [],
+                          "routeLeak": []
+                      }
+                  ],
+                  "bds": [
+                      {
+                          "bdRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/bds/BD-DB",
+                          "subnets": [],
+                          "l3Outs": [],
+                          "hostBasedRouting": false,
+                          "l3OutRefs": [],
+                          "mac": "00:22:BD:F8:19:FF"
+                      }
+                  ],
+                  "contracts": [
+                      {
+                          "contractRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/contracts/TESTDN"
+                      }
+                  ],
+                  "externalEpgs": [
+                      {
+                          "externalEpgRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/externalEpgs/Ext-DB",
+                          "l3outDn": "uni/tn-Site-B-DB-JBS/out-L3out_DB",
+                          "subnets": [],
+                          "routeReachabilityInternetType": "internet",
+                          "l3outRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/l3outs/L3out_DB"
+                      }
+                  ],
+                  "serviceGraphs": [],
+                  "intersiteL3outs": [
+                      {
+                          "l3outRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/l3outs/L3out_DB",
+                          "vrfRef": "/schemas/662070531f0000bec4a723eb/templates/TMP_1/vrfs/VRF_1",
+                          "srLocationProfiles": []
+                      },
+                      {
+                          "l3outRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/l3outs/L3out_test",
+                          "vrfRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/vrfs/VRF-TEST",
+                          "srLocationProfiles": []
+                      }
+                  ],
+                  "networks": []
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

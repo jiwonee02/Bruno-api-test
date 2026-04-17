@@ -1,0 +1,25 @@
+info:
+  name: list application - ndi 6.5
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: https://{{server-address}}/sedgeapi/v1/cisco-nir/api/api/v1/applications/browse?object=application
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: object
+      value: application
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

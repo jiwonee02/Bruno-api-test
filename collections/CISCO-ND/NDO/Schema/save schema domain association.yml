@@ -1,0 +1,35 @@
+info:
+  name: save schema domain association
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: https://{{server-address}}/api/v1/schemas/:schema-id
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: schema-id
+      value: 686cb7c91f0000491c8bb157
+      type: path
+  body:
+    type: json
+    data: "[\r
+
+      \    {\r
+
+      \        \"op\": \"remove\",\r
+
+      \        \"path\": \"/sites/686b6d7b680003760832b8b9-Test_Ocean_TMP/anps/AP_Ocean/epgs/EPG_Ocean/domainAssociations/0\"\r
+
+      \    }\r
+
+      ]"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

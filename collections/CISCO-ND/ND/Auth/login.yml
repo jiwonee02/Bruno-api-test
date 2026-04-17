@@ -1,0 +1,23 @@
+info:
+  name: login
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://{{server-address}}/login
+  body:
+    type: json
+    data: |-
+      {
+          "userName": "{{user-id}}",
+          "userPasswd": "{{password}}",
+          "domain": "local"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,21 @@
+info:
+  name: list application
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: https://{{server-address}}/sedgeapi/v1/firmwared/api/applications
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

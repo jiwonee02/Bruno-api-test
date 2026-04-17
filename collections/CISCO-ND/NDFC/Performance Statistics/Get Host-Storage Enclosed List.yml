@@ -1,0 +1,34 @@
+info:
+  name: Get Host/Storage Enclosed List
+  type: http
+  seq: 45
+
+http:
+  method: GET
+  url: https://{{server-address}}/appcenter/cisco/ndfc/api/v1/pm/stat/portGroupStat
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: interval
+      value: 24 Hours
+      type: query
+      disabled: true
+    - name: navId
+      value: "-1"
+      type: query
+      disabled: true
+    - name: type
+      value: Port Groups
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: // /api/v1/schemas/{id}/templates/{templateName}/anps/{anpName}/epgs/{epgName}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,25 @@
+info:
+  name: Get Policy
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: https://{{server-address}}/appcenter/cisco/ndfc/api/v1/alarm/alarms/exportpolicy?name=admin
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: name
+      value: admin
+      type: query
+  body:
+    type: json
+    data: // /api/v1/schemas/{id}/templates/{templateName}/anps/{anpName}/epgs/{epgName}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

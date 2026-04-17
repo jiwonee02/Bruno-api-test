@@ -1,0 +1,69 @@
+info:
+  name: save schema filter entity_2.2
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: https://{{server-address}}/api/v1/schemas/:schema-id
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: schema-id
+      value: 68918e561f0000f700f2c147
+      type: path
+  body:
+    type: json
+    data: "[\r
+
+      \    {\r
+
+      \        \"op\": \"add\",\r
+
+      \        \"path\": \"/templates/OCEAN_TEST_NDO_Temp/filters/filter9/entries/-\",\r
+
+      \        \"value\": {\r
+
+      \            \"displayName\": \"filter2_entry22\",\r
+
+      \            \"description\": \"113\",\r
+
+      \            \"etherType\": \"ip\",\r
+
+      \            \"ipProtocol\": \"tcp\",\r
+
+      \            \"destinationFrom\": \"https\",\r
+
+      \            \"destinationTo\": \"http\",\r
+
+      \            \"matchOnlyFragments\": false,\r
+
+      \            \"arpFlag\": \"unspecified\",\r
+
+      \            \"sourceFrom\": \"http\",\r
+
+      \            \"sourceTo\": \"http\",\r
+
+      \            \"tcpSessionRules\": [\r
+
+      \                \"acknowledgement\"\r
+
+      \            ],\r
+
+      \            \"name\": \"filter2_entry22\",\r
+
+      \            \"stateful\": false\r
+
+      \        }\r
+
+      \    }\r
+
+      ]"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

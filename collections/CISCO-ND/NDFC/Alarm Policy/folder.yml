@@ -1,0 +1,7 @@
+info:
+  name: Alarm Policy
+  type: folder
+  seq: 13
+
+request:
+  auth: inherit

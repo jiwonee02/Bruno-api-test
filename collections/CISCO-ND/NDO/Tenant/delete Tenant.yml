@@ -1,0 +1,56 @@
+info:
+  name: delete Tenant
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: https://10.100.199.211/api/v1/tenants/687f226d1f000063338bb1d3
+  headers:
+    - name: cookie
+      value: AuthCookie={{auth-cookie}}
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: "const options = {\r
+
+        \    url: \"https://10.100.199.211/login\",\r
+
+        \    method: 'POST',\r
+
+        \    headers: { 'content-type': 'application/json' },\r
+
+        \    data: JSON.stringify({ \"userName\": \"admin\", \"userPasswd\": \"!@34Qwer\", \"domain\": \"local\"})\r
+
+        };\r
+
+        \r
+
+        await bru.sendRequest(options, async function(err, res) {\r
+
+        \    var jsonData = res.data;\r
+
+        \    if (err) {\r
+
+        \        console.log(err);\r
+
+        \    }\r
+
+        \    else {\r
+
+        \        bru.setEnvVar(\"auth-cookie\", jsonData.jwttoken);\r
+
+        \    }\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

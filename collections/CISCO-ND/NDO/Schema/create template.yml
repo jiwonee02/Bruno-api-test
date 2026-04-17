@@ -1,0 +1,47 @@
+info:
+  name: create template
+  type: http
+  seq: 15
+
+http:
+  method: PATCH
+  url: https://{{server-address}}/api/v1/schemas/:schema-id
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: schema-id
+      value: 687e1b8c1f000083148bb1ae
+      type: path
+  body:
+    type: json
+    data: "[\r
+
+      \    {\r
+
+      \        \"op\": \"add\",\r
+
+      \        \"path\": \"/templates/-\",\r
+
+      \        \"value\": {\r
+
+      \            \"name\": \"newtemplate11\",\r
+
+      \            \"displayName\": \"newtemplate1 disp\",\r
+
+      \            \"tenantId\": \"686cb6ef1f0000201c8bb156\",\r
+
+      \            \"description\": \"desc\"\r
+
+      \        }\r
+
+      \    }\r
+
+      ]"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

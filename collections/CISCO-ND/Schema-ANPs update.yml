@@ -1,0 +1,68 @@
+info:
+  name: Schema/ANPs update
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: https://10.100.199.211/api/v1/schemas/6618b5b11f0000cbc6121c2c
+  headers:
+    - name: cookie
+      value: AuthCookie=eyJhbGciOiJSUzI1NiIsImtpZCI6InRhc3ZkOW4wd3AyaXBrNHZ0czQycWtrejU2Y3A2YTlxIiwidHlwIjoiSldUIn0.eyJhdnBhaXIiOiJzaGVsbDpkb21haW5zPWFsbC9hZG1pbi8iLCJjbHVzdGVyIjoiNDM0YzJkNGUtNDQwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwIiwiZXhwIjoxNzE0MTE4NjkzLCJpYXQiOjE3MTQxMTc0OTMsImlkIjoiNDhkMTA1YmRmYmM0OWE1ZmNmMzlhMTBiOTYxMzg2ZTYxZGZlNDAwODVjYjAzMTVkODE4Yjc2MWM1NzM1ZGFmYSIsImlzcyI6Im5kIiwiaXNzLWhvc3QiOiIxMC4xMDAuMTk5LjIxMSIsInJiYWMiOlt7ImRvbWFpbiI6ImFsbCIsInJvbGVzUiI6MTY3NzcyMTYsInJvbGVzVyI6MSwicm9sZXMiOltbImFkbWluIiwiV3JpdGVQcml2Il0sWyJhcHAtdXNlciIsIlJlYWRQcml2Il1dfV0sInNlc3Npb25pZCI6InVpYzQ3UUN1cGxSQzNrbkxEUnVROUxRayIsInVzZXJmbGFncyI6MCwidXNlcmlkIjoyNTAwMiwidXNlcm5hbWUiOiJhZG1pbiIsInVzZXJ0eXBlIjoibG9jYWwifQ.tB0pR7OF0PERNts35r51eXrjNk3cG4eoWDQtsdnoIQ__KhTJKhui5mFzod8d_jFZAYXjTK8seGwAHczRxaYir1DOaf8cWWH5ypCWCFAjeV7daRkTs2Oa4_ynHJpXR_N_8qCtbuA0_W7iJlTUcH8_4LYnfnoFuJDORElfKxNYlQGxr36geJGzzZZwbVgmaQ0dfTckf3mRf5OZGrgEoxCvVDRlU1AqMKT6adyRTxer4gWVkUPHYgXfRyCLEbFN8RgGp5PxsSzKBIrP2XMK1uTJgx0zLqIFh_A3DH7H5hTEO_-7POS6e6W9XE8DHT9ZCJZXWk7nuHwH2V5FYLjl_Aj0KA
+  body:
+    type: json
+    data: |-
+      [
+          {
+              "op": "replace",
+              "path": "/templates/Site-B-Temp/anps/AP_DB",
+              "value": {
+                  "description": "AP_DB3334",
+                  "displayName": "AP_DB3334",
+                  "name": "AP_DB",
+                  "epgs": [
+                      {
+                          "name": "EP1",
+                          "displayName": "EP1",
+                          "epgRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/AP_DB/epgs/EP1",
+                          "contractRelationships": [],
+                          "subnets": [],
+                          "uSegAttrs": [],
+                          "intraEpg": "unenforced",
+                          "prio": "unspecified",
+                          "mCastSource": false,
+                          "preferredGroup": false,
+                          "bdRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/bds/BD-DB",
+                          "vrfRef": "",
+                          "selectors": [],
+                          "epgType": "application",
+                          "description": ""
+                      },
+                      {
+                          "name": "EP2",
+                          "displayName": "EP2",
+                          "epgRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/anps/AP_DB/epgs/EP2",
+                          "contractRelationships": [],
+                          "subnets": [],
+                          "uSegAttrs": [],
+                          "intraEpg": "unenforced",
+                          "prio": "unspecified",
+                          "mCastSource": false,
+                          "preferredGroup": false,
+                          "bdRef": "/schemas/6618b5b11f0000cbc6121c2c/templates/Site-B-Temp/bds/BD-DB",
+                          "vrfRef": "",
+                          "selectors": [],
+                          "epgType": "application",
+                          "description": ""
+                      }
+                  ]
+              }
+          }
+      ]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

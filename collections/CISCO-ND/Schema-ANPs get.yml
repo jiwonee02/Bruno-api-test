@@ -1,0 +1,32 @@
+info:
+  name: Schema/ANPs get
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: https://10.100.199.211/api/v1/schemas/6618b5b11f0000cbc6121c2c
+  headers:
+    - name: cookie
+      value: AuthCookie=eyJhbGciOiJSUzI1NiIsImtpZCI6InRhc3ZkOW4wd3AyaXBrNHZ0czQycWtrejU2Y3A2YTlxIiwidHlwIjoiSldUIn0.eyJhdnBhaXIiOiJzaGVsbDpkb21haW5zPWFsbC9hZG1pbi8iLCJjbHVzdGVyIjoiNDM0YzJkNGUtNDQwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwIiwiZXhwIjoxNzE0MTE2MTA3LCJpYXQiOjE3MTQxMTQ5MDcsImlkIjoiNDhkMTA1YmRmYmM0OWE1ZmNmMzlhMTBiOTYxMzg2ZTYxZGZlNDAwODVjYjAzMTVkODE4Yjc2MWM1NzM1ZGFmYSIsImlzcyI6Im5kIiwiaXNzLWhvc3QiOiIxMC4xMDAuMTk5LjIxMSIsInJiYWMiOlt7ImRvbWFpbiI6ImFsbCIsInJvbGVzUiI6MTY3NzcyMTYsInJvbGVzVyI6MSwicm9sZXMiOltbImFkbWluIiwiV3JpdGVQcml2Il0sWyJhcHAtdXNlciIsIlJlYWRQcml2Il1dfV0sInNlc3Npb25pZCI6IlVpT3BPN1ZNak5WYmtiVVRGb2kwUlR3TCIsInVzZXJmbGFncyI6MCwidXNlcmlkIjoyNTAwMiwidXNlcm5hbWUiOiJhZG1pbiIsInVzZXJ0eXBlIjoibG9jYWwifQ.tNgVipzzC_mlGBEzEJEyfjcOyKCFMoHLsmVA6CfGybvNvwEtI5_dhsf52F340ACMttrpsoC_HOTXVWEIIu_dg5qDrE7oKgpq8zfhGw7zGA6zSzuYDQ1S6YZms2AET-iETeuCtJTPQJXxAPV1MPn5-1LME95QKKnKSO3NF8K73Y7O9FFU1iPMT5NKr3_WrfOPGWrTTjJ2bn1nBTcLS8MEKJgGgroRmZgKrYUF94nsgOfdbWvoXoEaVUfCDXh8sO7dYxT3KLsYEuSM_G_6101w99vLwpZ7EsAq65EDfU2nEwKKxNBEhDoOIl_EBZoSixeOwDGbTzTlfuKthf7ARLN2Iw
+  body:
+    type: json
+    data: |-
+      [
+          {
+              "op": "replace",
+              "path": "/templates/Site-B-Temp/anps/Test2",
+              "value": {
+                  "description": "EPG-DB99",
+                  "displayName": "EPG-DB99",
+                  "name": "Test2"
+              }
+          }
+      ]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

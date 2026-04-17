@@ -1,0 +1,28 @@
+info:
+  name: Get Interface group details of Fabric and group name
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: https://{{server-address}}/appcenter/cisco/ndfc/api/v1/lan-fabric/rest/control/fabrics/:fabric-name/ifgroup/:group-name
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: fabric-name
+      value: FC_sw
+      type: path
+    - name: group-name
+      value: MyIFGroup
+      type: path
+  body:
+    type: json
+    data: // /api/v1/schemas/{id}/templates/{templateName}/anps/{anpName}/epgs/{epgName}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

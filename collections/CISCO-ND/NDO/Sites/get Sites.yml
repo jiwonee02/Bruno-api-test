@@ -1,0 +1,25 @@
+info:
+  name: get Sites
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: https://{{server-address}}/api/v1/sites/:site-id
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: site-id
+      value: 683d5c9d6dda397cd73d4cdf
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

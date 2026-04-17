@@ -1,0 +1,69 @@
+info:
+  name: save schema filter entity
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: https://{{server-address}}/api/v1/schemas/:schema-id
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: schema-id
+      value: 6892bc969b7d10886c6cf193
+      type: path
+  body:
+    type: json
+    data: "[\r
+
+      \    {\r
+
+      \        \"op\": \"add\",\r
+
+      \        \"path\": \"/templates/schema_template_322f/filters/filter1_322f/entries/-\",\r
+
+      \        \"value\": {\r
+
+      \            \"displayName\": \"filter4_entry322f\",\r
+
+      \            \"description\": \"113\",\r
+
+      \            \"etherType\": \"ip\",\r
+
+      \            \"ipProtocol\": \"tcp\",\r
+
+      \            \"destinationFrom\": \"https\",\r
+
+      \            \"destinationTo\": \"http\",\r
+
+      \            \"matchOnlyFragments\": false,\r
+
+      \            \"arpFlag\": \"unspecified\",\r
+
+      \            \"sourceFrom\": \"http\",\r
+
+      \            \"sourceTo\": \"http\",\r
+
+      \            \"tcpSessionRules\": [\r
+
+      \                \"acknowledgement\"\r
+
+      \            ],\r
+
+      \            \"name\": \"filter4_entry322f\",\r
+
+      \            \"stateful\": false\r
+
+      \        }\r
+
+      \    }\r
+
+      ]"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

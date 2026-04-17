@@ -1,0 +1,25 @@
+info:
+  name: To get the Fabric name for given Switch serial number
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: https://{{server-address}}/appcenter/cisco/ndfc/api/v1/lan-fabric/rest/control/switches/:serialNumber/fabric-name
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: serialNumber
+      value: 9Q9H9C9G1O5
+      type: path
+  body:
+    type: json
+    data: // /api/v1/schemas/{id}/templates/{templateName}/anps/{anpName}/epgs/{epgName}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

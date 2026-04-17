@@ -1,0 +1,29 @@
+info:
+  name: Get PM Interface Chart Data
+  type: http
+  seq: 44
+
+http:
+  method: GET
+  url: https://{{server-address}}/appcenter/cisco/ndfc/api/v1/pm/stat/pmInterfaceChartData?interfaceDbId=-1
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: interfaceDbId
+      value: "-1"
+      type: query
+    - name: interval
+      value: "1"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: // /api/v1/schemas/{id}/templates/{templateName}/anps/{anpName}/epgs/{epgName}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,39 @@
+info:
+  name: deploytemplate to site
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: https://{{server-address}}/api/v1/schemas/:schema-id
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: schema-id
+      value: 6892bd91ce56697069228f60
+      type: path
+  body:
+    type: json
+    data: "{\r
+
+      \    \"op\": \"add\",\r
+
+      \    \"path\": \"/sites/-\",\r
+
+      \    \"value\": {\r
+
+      \        \"siteId\": \"68801c456e2aeb8997902875\",\r
+
+      \        \"templateName\": \"6892bd91ce56697069228f61\"\r
+
+      \    }\r
+
+      }\r\n"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

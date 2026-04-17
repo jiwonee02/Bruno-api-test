@@ -1,0 +1,43 @@
+info:
+  name: create Schema
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: https://{{server-address}}/api/v1/schemas
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  body:
+    type: json
+    data: "{\r
+
+      \    \"displayName\": \"newTest5-Schema\",\r
+
+      \    \"description\": \"NewTest5\",\r
+
+      \    \"templates\": [\r
+
+      \        {\r
+
+      \            \"name\": \"NewTest5\",\r
+
+      \            \"displayName\": \"NewTest5-Template\",\r
+
+      \            \"tenantId\": \"686cb6ef1f0000201c8bb156\",\r
+
+      \            \"description\": \"NewTest1-Template desc\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

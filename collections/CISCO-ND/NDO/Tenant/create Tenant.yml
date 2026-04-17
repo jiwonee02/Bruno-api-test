@@ -1,0 +1,98 @@
+info:
+  name: create Tenant
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: https://10.100.199.211/api/v1/tenants
+  headers:
+    - name: cookie
+      value: AuthCookie={{auth-cookie}}
+  body:
+    type: json
+    data: "{\r
+
+      \    \"name\": \"soyeontest7\",\r
+
+      \    \"displayName\": \"soyeontest7\", // displayname,\r
+
+      \    \"description\": \"desrc\",\r
+
+      \    \"siteAssociations\": [\r
+
+      \        {\r
+
+      \            \"siteId\": \"686b6d7b680003760832b8b9\",\r
+
+      \            \"securityDomains\": []\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"siteId\": \"686c83ed680003760832b8ba\",\r
+
+      \            \"securityDomains\": []\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"userAssociations\": [\r
+
+      \        {\r
+
+      \            \"userId\": \"9407e465731520fd69365c2e85542533c44e93205973978f200f6d55de1d60d7\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"_updateVersion\": 0,\r
+
+      \    \"_versionDefaulted\": false\r
+
+      }"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: "const options = {\r
+
+        \    url: \"https://10.100.199.211/login\",\r
+
+        \    method: 'POST',\r
+
+        \    headers: { 'content-type': 'application/json' },\r
+
+        \    data: JSON.stringify({ \"userName\": \"admin\", \"userPasswd\": \"!@34Qwer\", \"domain\": \"local\"})\r
+
+        };\r
+
+        \r
+
+        await bru.sendRequest(options, async function(err, res) {\r
+
+        \    var jsonData = res.data;\r
+
+        \    if (err) {\r
+
+        \        console.log(err);\r
+
+        \    }\r
+
+        \    else {\r
+
+        \        bru.setEnvVar(\"auth-cookie\", jsonData.jwttoken);\r
+
+        \    }\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

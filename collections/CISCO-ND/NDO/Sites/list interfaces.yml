@@ -1,0 +1,63 @@
+info:
+  name: list interfaces
+  type: http
+  seq: 13
+
+http:
+  method: GET
+  url: https://{{server-address}}/api/v1/aci/sites/:site-id/nodes/interfaces?type=vpc
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: type
+      value: vpc
+      type: query
+    - name: site-id
+      value: 68ca71e9581ad2e263b1067f
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: before-request
+      code: "const options = {\r
+
+        \    url: \"https://10.100.199.211/login\",\r
+
+        \    method: 'POST',\r
+
+        \    headers: { 'content-type': 'application/json' },\r
+
+        \    data: JSON.stringify({ \"userName\": \"admin\", \"userPasswd\": \"!@34Qwer\", \"domain\": \"local\"})\r
+
+        };\r
+
+        \r
+
+        await bru.sendRequest(options, async function(err, res) {\r
+
+        \    var jsonData = res.data;\r
+
+        \    if (err) {\r
+
+        \        console.log(err);\r
+
+        \    }\r
+
+        \    else {\r
+
+        \        bru.setEnvVar(\"auth-cookie\", jsonData.jwttoken);\r
+
+        \    }\r
+
+        });"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

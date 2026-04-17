@@ -1,0 +1,28 @@
+info:
+  name: list domain types
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: https://{{server-address}}/api/v1/sites/:site-id/aci/domains?type=physical
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: type
+      value: physical
+      type: query
+    - name: site-id
+      value: 68ca71e9581ad2e263b1067f
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

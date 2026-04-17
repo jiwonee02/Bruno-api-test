@@ -1,0 +1,80 @@
+opencollection: 1.0.0
+
+info:
+  name: CISCO-ND
+
+request:
+  variables:
+    - name: server-address
+      value: 20.100.100.116
+    - name: token
+      value: abc
+    - name: user-id
+      value: admin
+    - name: password
+      value: "!@#45QWert"
+    - name: ""
+      value: ""
+  scripts:
+    - type: after-response
+      code: "let response = res.getBody();\r
+
+        if( res.statusText != \"200\" ){\r
+
+        \    try {\r
+
+        \        const response = await bru.sendRequest({\r
+
+        \            url: \"https://\" + bru.getVar(\"server-address\") + \"/login\",\r
+
+        \            method: \"POST\",\r
+
+        \            headers: 'headername1:value1',\r
+
+        \            data: JSON.stringify(\r
+
+        {\r
+
+        \"userName\": bru.getVar(\"user-id\"),\r
+
+        \"userPasswd\": bru.getVar(\"password\"),\r
+
+        \"domain\": \"local\"\r
+
+        }\r
+
+        \            )\r
+
+        \        }, async function(err, res) {\r
+
+        \            console.log(err)\r
+
+        \            if(!err){\r
+
+        \                console.log(res.data);            \r
+
+        //                 pm.collectionVariables.set('token', res.data.jwttoken);          \r
+
+        \                bru.getVar(\"token\")      \r
+
+        \            }\r
+
+        \        });\r
+
+        \        \r
+
+        \    } catch (err) {\r
+
+        \        console.error(err);\r
+
+        \    }\r
+
+        \r
+
+        }"
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

@@ -1,0 +1,33 @@
+info:
+  name: List all the logical Links for the given Fabric
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: https://{{server-address}}/appcenter/cisco/ndfc/api/v1/lan-fabric/rest/control/links/logical-links/:fabricName
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: serialNumber
+      value: 9Q9H9C9G1O5
+      type: query
+      disabled: true
+    - name: swDBID
+      value: "1070"
+      type: query
+      disabled: true
+    - name: fabricName
+      value: FC_sw
+      type: path
+  body:
+    type: json
+    data: // /api/v1/schemas/{id}/templates/{templateName}/anps/{anpName}/epgs/{epgName}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

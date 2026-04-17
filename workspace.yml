@@ -1,0 +1,14 @@
+opencollection: 1.0.0
+info:
+  name: "Team Workspace"
+  type: workspace
+
+collections:
+  - name: "test"
+    path: "collections/test"
+  - name: "CISCO-ND"
+    path: "collections/CISCO-ND"
+
+specs:
+
+docs: ''

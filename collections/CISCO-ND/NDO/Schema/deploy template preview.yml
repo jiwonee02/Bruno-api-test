@@ -1,0 +1,31 @@
+info:
+  name: deploy template preview
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: https://{{server-address}}/mso/api/v1/deployments/templates/:template-id/previewasync?isRedeploy=true
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: isRedeploy
+      value: "true"
+      type: query
+    - name: template-id
+      value: 68f0926d443d1e6f3ffac69a
+      type: path
+      description: |-
+        68ca7300443d1e6f3ffa68b3
+        68d155a8443d1e6f3ffab328
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

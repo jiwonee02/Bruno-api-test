@@ -1,0 +1,34 @@
+info:
+  name: Get San Isls or Npvlink by interfaceDbId
+  type: http
+  seq: 47
+
+http:
+  method: GET
+  url: https://{{server-address}}/appcenter/cisco/ndfc/api/v1/pm/stat/sanIslOrNpvlinkStat
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: interval
+      value: Day
+      type: query
+      disabled: true
+    - name: navId
+      value: "-1"
+      type: query
+      disabled: true
+    - name: interfaceDbId
+      value: "-1"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: // /api/v1/schemas/{id}/templates/{templateName}/anps/{anpName}/epgs/{epgName}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

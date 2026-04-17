@@ -1,0 +1,34 @@
+info:
+  name: Get Custom Chart Data
+  type: http
+  seq: 42
+
+http:
+  method: GET
+  url: https://{{server-address}}/appcenter/cisco/ndfc/api/v1/pm/stat/pmCustomChartData?rrdFile=172.25.234.191_1.3.6.1.4.1.9.9.305.1.1.1.0.rrd&pmType=15&startTime=-1&endTime=-1
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: rrdFile
+      value: 172.25.234.191_1.3.6.1.4.1.9.9.305.1.1.1.0.rrd
+      type: query
+    - name: pmType
+      value: "15"
+      type: query
+    - name: startTime
+      value: "-1"
+      type: query
+    - name: endTime
+      value: "-1"
+      type: query
+  body:
+    type: json
+    data: // /api/v1/schemas/{id}/templates/{templateName}/anps/{anpName}/epgs/{epgName}
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

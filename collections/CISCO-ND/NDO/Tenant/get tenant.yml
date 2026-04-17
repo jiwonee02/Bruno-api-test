@@ -1,0 +1,25 @@
+info:
+  name: get tenant
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: https://{{server-address}}/api/v1/tenants/:tenant-id
+  headers:
+    - name: cookie
+      value: AuthCookie={{token}}
+  params:
+    - name: tenant-id
+      value: 0000ffff0000000000000011
+      type: path
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
